@@ -25,12 +25,17 @@ const getAllUser = async(req:Request,res:Response)=>{
 
     try{
         const result = await issuesService.getAllUserFromDB(req.query as any);
+        sendResponse(res,{
+            statusCode: 200,
+            success: true,
+            data: result
+        })
 
     }catch(error:any){
         sendResponse(res,{
             statusCode:500,
             success: false,
-            message: "Login Failed",
+            message: "Unable to retrieve data",
             error: error.error
         })
     }
