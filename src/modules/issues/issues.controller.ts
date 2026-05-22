@@ -24,7 +24,7 @@ const createIssue = async(req:Request,res:Response)=>{
 const getAllUser = async(req:Request,res:Response)=>{
 
     try{
-        const result = await issuesService.getAllUserFromDB(req.query as any);
+        const result = await issuesService.getAllIssuesFromDB(req.query as any);
         sendResponse(res,{
             statusCode: 200,
             success: true,
@@ -40,7 +40,27 @@ const getAllUser = async(req:Request,res:Response)=>{
         })
     }
 }
+const getSingleUser =async(req:Request,res:Response)=>{
+    const {id}= req.params;
+    try{
+        const result = await issuesService.getSingleUserFromDB(id as string)
+        sendResponse(res,{
+            statusCode: 200,
+            success: true,
+            data: result
+        })
+    }catch(error:any){
+        sendResponse(res,{
+            statusCode:404,
+            success: false,
+            message: "User not found",
+            error: error.error
+        })
+    }
+}
+const updateIssue = 
 export const issuesController ={
     createIssue,
-    getAllUser
+    getAllUser,
+    getSingleUser
 }

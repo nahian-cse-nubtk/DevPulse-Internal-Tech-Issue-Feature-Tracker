@@ -2,6 +2,7 @@ import { pool } from "../../db";
 import type { IIssue, ISSUESTYPE } from "./issues.interface";
 
 
+
 const createIssue = async(id:number,payload:IIssue)=>{
 
     const {title,description,type,status}=payload;
@@ -11,7 +12,7 @@ const createIssue = async(id:number,payload:IIssue)=>{
         `,[title,description,type,id,status])
     return result;
 }
-const getAllUserFromDB =async(payload:ISSUESTYPE)=>{
+const getAllIssuesFromDB =async(payload:ISSUESTYPE)=>{
   const { sort = "newest", type, status } = payload;
 
   const issuesResult = await pool.query(`
@@ -45,7 +46,33 @@ const getAllUserFromDB =async(payload:ISSUESTYPE)=>{
 
 
 }
+const getSingleUserFromDB =async(id:string)=>{
+
+    const issueResult =await pool.query(`
+        SELECT * FROM issues WHERE id = $1
+        `,[id])
+        const issue = issueResult.rows[0];
+
+        const reporterResult = await pool.query(`
+            SELECT id,name,role FROM users WHERE id = $1
+            `,[issue.reporter_id])
+        const reporter = reporterResult.rows[0];
+        const formatedIssue ={
+            id: issue.id,
+            title: issue.title,
+            description: issue.description,
+            type: issue.type,
+            status:issue.status,
+            reporter,
+            created_at: issue.created_at,
+            updated_at: issue.updated_at
+        }
+
+        return formatedIssue;
+
+}
 export const issuesService ={
     createIssue,
-    getAllUserFromDB
+    getAllIssuesFromDB,
+    getSingleUserFromDB
 }
