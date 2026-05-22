@@ -77,9 +77,36 @@ const updateIssue = async(req:Request,res:Response)=>{
         })
     }
 }
+const deleteIssue =async(req:Request,res:Response)=>{
+    const {id} =req.params;
+    try{
+        const result = await issuesService.deleteIssueFromDB(id as string);
+        if(result.rowCount !==0){
+            sendResponse(res,{
+            statusCode: 200,
+            success:true,
+            message: "Issue deleted successfully",
+        })
+        }else{
+            sendResponse(res,{
+                statusCode: 404,
+                success: false,
+                message: "User not found"
+            })
+        }
+    }catch(error:any){
+        sendResponse(res,{
+            statusCode:500,
+            success: false,
+            message: "Delete unsuccessful",
+            error: error.error
+        })
+    }
+}
 export const issuesController ={
     createIssue,
     getAllUser,
     getSingleUser,
-    updateIssue
+    updateIssue,
+    deleteIssue
 }
