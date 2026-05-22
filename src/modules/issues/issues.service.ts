@@ -1,3 +1,4 @@
+import type { JwtPayload } from "jsonwebtoken";
 import { pool } from "../../db";
 import type { IIssue, ISSUESTYPE } from "./issues.interface";
 
@@ -71,8 +72,14 @@ const getSingleUserFromDB =async(id:string)=>{
         return formatedIssue;
 
 }
+const updateIssueIntoDB = async(id:string,payload:IIssue,user:JwtPayload)=>{
+    const {title, description,type} =payload;
+    
+
+}
 export const issuesService ={
     createIssue,
     getAllIssuesFromDB,
-    getSingleUserFromDB
+    getSingleUserFromDB,
+    updateIssueIntoDB
 }

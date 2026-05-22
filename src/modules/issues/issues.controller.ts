@@ -58,9 +58,24 @@ const getSingleUser =async(req:Request,res:Response)=>{
         })
     }
 }
-const updateIssue = 
+const updateIssue = async(req:Request,res:Response)=>{
+    const {id} =req.params;
+    console.log(req.user,req.body,req.params);
+     try{
+        const result = issuesService.updateIssueIntoDB(id as string,req.body,req.user)
+
+     }catch(error:any){
+        sendResponse(res,{
+            statusCode:500,
+            success: false,
+            message: "Update unsuccessful",
+            error: error.error
+        })
+    }
+}
 export const issuesController ={
     createIssue,
     getAllUser,
-    getSingleUser
+    getSingleUser,
+    updateIssue
 }
