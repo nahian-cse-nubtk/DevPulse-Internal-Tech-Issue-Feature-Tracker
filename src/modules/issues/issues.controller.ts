@@ -60,10 +60,14 @@ const getSingleUser =async(req:Request,res:Response)=>{
 }
 const updateIssue = async(req:Request,res:Response)=>{
     const {id} =req.params;
-    console.log(req.user,req.body,req.params);
      try{
-        const result = issuesService.updateIssueIntoDB(id as string,req.body,req.user)
-
+        const result = await issuesService.updateIssueIntoDB(id as string,req.body)
+        sendResponse(res,{
+            statusCode: 200,
+            success:true,
+            message: "Issue updated successfully",
+            data:result.rows[0]
+        })
      }catch(error:any){
         sendResponse(res,{
             statusCode:500,
