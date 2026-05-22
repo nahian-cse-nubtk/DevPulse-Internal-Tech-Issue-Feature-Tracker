@@ -77,10 +77,10 @@ const updateIssueIntoDB = async(id:string,payload:IIssue)=>{
 
     const result = await pool.query(`
             UPDATE issues SET
-            tittle=COALESCE($1,title),
+            title=COALESCE($1,title),
             description=COALESCE($2,description),
             type = COALESCE($3,type) WHERE id = $4 RETURNING *
-        `,[title,description,type])
+        `,[title,description,type,id])
         return result;
 
 
