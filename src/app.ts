@@ -9,8 +9,9 @@ const app = express();
 
 //middleware
 app.use(express.json())
-app.use(cors(corsOptions))
 app.use(logger);
+app.use(cors(corsOptions))
+
 
 //router
 app.use('/api/auth',UserRouter);

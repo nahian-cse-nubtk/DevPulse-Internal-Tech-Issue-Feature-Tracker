@@ -1,0 +1,98 @@
+
+ Method->DELETE, Time->1779470918570, url->/api/issues/4 
+
+ Method->DELETE, Time->1779471005417, url->/api/issues/4 
+
+ Method->DELETE, Time->1779471043879, url->/api/issues/4 
+
+ Method->DELETE, Time->1779471105145, url->/api/issues/4 
+
+ Method->DELETE, Time->1779471174856, url->/api/issues/4 
+
+ Method->DELETE, Time->1779471232934, url->/api/issues/4 
+
+ Method->DELETE, Time->1779471339333, url->/api/issues/4 
+
+ Method->POST, Time->1779471385055, url->/api/auth/login 
+
+ Method->POST, Time->1779471452581, url->/api/auth/login 
+
+ Method->GET, Time->1779471485446, url->/ 
+
+ Method->GET, Time->1779471522552, url->/ 
+
+ Method->GET, Time->1779471530234, url->/ 
+
+ Method->GET, Time->1779471581366, url->/ 
+
+ Method->GET, Time->1779471654330, url->/ 
+
+ Method->DELETE, Time->1779471673259, url->/api/issues/4 
+
+ Method->DELETE, Time->1779471694135, url->/api/issues/5 
+
+ Method->DELETE, Time->1779471717995, url->/api/issues/6 
+
+ Method->DELETE, Time->1779471835596, url->/api/issues/6 
+
+ Method->DELETE, Time->1779471847636, url->/api/issues/6 
+
+ Method->DELETE, Time->1779472116820, url->/api/issues/6 
+
+ Method->DELETE, Time->1779472140376, url->/api/issues/6 
+
+ Method->GET, Time->1779472448281, url->/api/issues 
+
+ Method->GET, Time->1779472467781, url->/api/issues/1 
+
+ Method->PATCH, Time->1779472514141, url->/api/issues/3 
+
+ Method->DELETE, Time->1779472708994, url->/api/issues/6 
+
+ Method->DELETE, Time->1779472831644, url->/api/issues/6 
+
+ Method->DELETE, Time->1779472900215, url->/api/issues/6 
+
+ Method->DELETE, Time->1779472923101, url->/api/issues/6 
+
+ Method->DELETE, Time->1779472961463, url->/api/issues/6 
+
+ Method->POST, Time->1779473064606, url->/api/auth/signup 
+
+ Method->GET, Time->1779474429114, url->/ 
+
+ Method->GET, Time->1779478062691, url->/ 
+
+ Method->GET, Time->1779478063194, url->/favicon.ico 
+
+ Method->PATCH, Time->1779478064207, url->//api/issues/3 
+
+ Method->PATCH, Time->1779478074028, url->/api/issues/3 
+
+ Method->PATCH, Time->1779478164226, url->/api/issues/3 
+
+ Method->PATCH, Time->1779478316630, url->/api/issues/3 
+
+ Method->GET, Time->1779478565479, url->/users 
+
+ Method->GET, Time->1779478573020, url->/api/issues 
+
+ Method->GET, Time->1779478628448, url->/api/issues/3 
+
+ Method->GET, Time->1779478674338, url->/api/issues/1 
+
+ Method->PATCH, Time->1779480890270, url->/api/issues/7 
+
+ Method->PATCH, Time->1779481015276, url->/api/issues/7 
+
+ Method->PATCH, Time->1779481135568, url->/api/issues/7 
+
+ Method->PATCH, Time->1779481266284, url->/api/issues/7 
+
+ Method->PATCH, Time->1779481322360, url->/api/issues/8 
+
+ Method->PATCH, Time->1779481491473, url->/api/issues/7 
+
+ Method->PATCH, Time->1779481533505, url->/api/issues/8 
+
+ Method->PATCH, Time->1779481547884, url->/api/issues/7 

@@ -4,13 +4,13 @@ import type { IIssue, ISSUESTYPE } from "./issues.interface";
 
 
 
-const createIssue = async(id:number,payload:IIssue)=>{
+const createIssue = async(user:JwtPayload,payload:IIssue)=>{
 
     const {title,description,type,status}=payload;
 
     const result = await pool.query(`
          INSERT INTO issues(title,description,type,reporter_id,status) VALUES($1,$2,$3,$4,COALESCE($5,'open')) RETURNING *
-        `,[title,description,type,id,status])
+        `,[title,description,type,user.id,status])
     return result;
 }
 const getAllIssuesFromDB =async(payload:ISSUESTYPE)=>{
@@ -47,7 +47,7 @@ const getAllIssuesFromDB =async(payload:ISSUESTYPE)=>{
 
 
 }
-const getSingleUserFromDB =async(id:string)=>{
+const getSingleIssueFromDB =async(id:string)=>{
 
     const issueResult =await pool.query(`
         SELECT * FROM issues WHERE id = $1
@@ -94,7 +94,7 @@ const deleteIssueFromDB = async(id:string)=>{
 export const issuesService ={
     createIssue,
     getAllIssuesFromDB,
-    getSingleUserFromDB,
+    getSingleIssueFromDB,
     updateIssueIntoDB,
     deleteIssueFromDB
 }

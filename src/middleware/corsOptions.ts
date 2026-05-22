@@ -1,4 +1,6 @@
+import config from "../config";
+
 export const corsOptions = {
-  origin: 'http://localhost:3000',
+  origin: config.url,
 
 }
