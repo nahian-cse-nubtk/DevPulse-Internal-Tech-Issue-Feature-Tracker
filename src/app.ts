@@ -4,16 +4,18 @@ import {  issuesRouter } from "./modules/issues/issues.route";
 import cors from "cors"
 import { corsOptions } from "./middleware/corsOptions";
 import globalErrorHandler from "./middleware/globalErrorHandle";
+import logger from "./middleware/logger";
 const app = express();
 
 //middleware
 app.use(express.json())
 app.use(cors(corsOptions))
-
+app.use(logger);
 
 //router
 app.use('/api/auth',UserRouter);
 app.use('/api/issues',issuesRouter)
+
 
 app.get('/', (req:Request, res:Response) => {
   res.status(200).json({
