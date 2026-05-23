@@ -20,8 +20,8 @@ const updateAccess = () => {
         [req.params.id],
       );
       const issue = issueResult.rows[0];
-      
-      if (role === "contributor" && issue.reporter_id === id && issue.status === "open"){
+
+      if (role === "contributor" && issue.reporter_id === id && issue.status === "open" && !req.body.status){
         next();
       } else if (role === "maintainer") {
         next();
