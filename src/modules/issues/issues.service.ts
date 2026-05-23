@@ -8,10 +8,13 @@ const createIssue = async(user:JwtPayload,payload:IIssue)=>{
 
     const {title,description,type,status}=payload;
 
-    const result = await pool.query(`
-         INSERT INTO issues(title,description,type,reporter_id,status) VALUES($1,$2,$3,$4,COALESCE($5,'open')) RETURNING *
-        `,[title,description,type,user.id,status])
+        const result = await pool.query(`
+         INSERT INTO issues(title,description,type,reporter_id) VALUES($1,$2,$3,$4) RETURNING *
+        `,[title,description,type,user.id])
+
     return result;
+
+
 }
 const getAllIssuesFromDB =async(payload:ISSUESTYPE)=>{
   const { sort = "newest", type, status } = payload;

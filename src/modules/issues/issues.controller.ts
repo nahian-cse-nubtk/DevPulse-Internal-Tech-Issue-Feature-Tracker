@@ -8,6 +8,7 @@ import type { JwtPayload } from "jsonwebtoken";
 const createIssue = async(req:Request,res:Response)=>{
     try{
         const result = await issuesService.createIssue(req.user as JwtPayload,req.body);
+        console.log(result);
         sendResponse(res,{
             statusCode: 201,
             success: true,
@@ -19,7 +20,7 @@ const createIssue = async(req:Request,res:Response)=>{
         sendResponse(res,{
             statusCode:500,
             success: false,
-            message: "Login Failed",
+            message: "Creating bug report or feature request is failed",
             error: error.error
         })
     }

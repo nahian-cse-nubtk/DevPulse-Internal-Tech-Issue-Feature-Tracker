@@ -96,3 +96,37 @@
  Method->PATCH, Time->1779481533505, url->/api/issues/8 
 
  Method->PATCH, Time->1779481547884, url->/api/issues/7 
+
+ Method->GET, Time->1779510999536, url->/ 
+
+ Method->GET, Time->1779511000746, url->/favicon.ico 
+
+ Method->POST, Time->1779511028405, url->/api/issues 
+
+ Method->POST, Time->1779511122381, url->/api/issues 
+
+ Method->POST, Time->1779511181606, url->/api/issues 
+
+ Method->POST, Time->1779511202058, url->/api/issues 
+
+ Method->POST, Time->1779511265255, url->/api/issues 
+
+ Method->POST, Time->1779511282353, url->/api/issues 
+
+ Method->POST, Time->1779511467039, url->/api/issues 
+
+ Method->POST, Time->1779511555628, url->/api/issues 
+
+ Method->POST, Time->1779511710882, url->/api/issues 
+
+ Method->POST, Time->1779511751951, url->/api/issues 
+
+ Method->POST, Time->1779511833214, url->/api/issues 
+
+ Method->POST, Time->1779512033346, url->/api/issues 
+
+ Method->GET, Time->1779512077332, url->/users 
+
+ Method->GET, Time->1779512083755, url->/api/issues 
+
+ Method->POST, Time->1779512525168, url->/api/issues 
